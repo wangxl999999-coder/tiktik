@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #app {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-tiktik-primary text-white px-4 py-2 rounded-full font-medium hover:bg-opacity-90 transition-all duration-200;
+  }
+
+  .btn-secondary {
+    @apply bg-white/10 text-white px-4 py-2 rounded-full font-medium hover:bg-white/20 transition-all duration-200;
+  }
+
+  .btn-outline {
+    @apply border border-white/30 text-white px-4 py-2 rounded-full font-medium hover:bg-white/10 transition-all duration-200;
+  }
+
+  .input-field {
+    @apply w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:outline-none focus:border-tiktik-primary transition-colors;
+  }
+
+  .card {
+    @apply bg-white/5 backdrop-blur-sm rounded-xl border border-white/10;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-tiktik-primary to-tiktik-secondary bg-clip-text text-transparent;
+  }
+
+  .video-container {
+    @apply relative w-full h-full bg-black overflow-hidden;
+  }
+
+  .video-element {
+    @apply w-full h-full object-contain;
+  }
+
+  .action-btn {
+    @apply flex flex-col items-center gap-1 cursor-pointer hover:scale-110 transition-transform;
+  }
+
+  .action-icon {
+    @apply w-10 h-10 flex items-center justify-center rounded-full bg-black/30 backdrop-blur-sm;
+  }
+
+  .modal-overlay {
+    @apply fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50;
+  }
+
+  .modal-content {
+    @apply bg-tiktik-gray rounded-2xl max-w-lg w-full mx-4 max-h-[80vh] overflow-hidden;
+  }
+}
