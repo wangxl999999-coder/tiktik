@@ -14,7 +14,10 @@ const activeTab = ref('feed')
 const containerRef = ref<HTMLDivElement | null>(null)
 const currentIndex = ref(0)
 
-const followingVideos = computed(() => videoStore.getFollowingVideos())
+const followingVideos = computed(() => {
+  const followingIds = userStore.followingUsers.map(u => u.id)
+  return videoStore.getFollowingVideos(followingIds)
+})
 const followingUsers = computed(() => userStore.followingUsers)
 
 const tabs = [

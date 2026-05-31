@@ -137,14 +137,14 @@ export const mockUsers: User[] = [
 ]
 
 export const mockTopics: Topic[] = [
-  { id: '1', name: '夏日穿搭', description: '分享夏天的时尚穿搭灵感', videosCount: 12580, viewsCount: 5689000, coverUrl: 'https://picsum.photos/300/300?random=101', isHot: true, heat: 985600, trend: 'up' },
-  { id: '2', name: '美食探店', description: '发现城市里的美食宝藏', videosCount: 23456, viewsCount: 12345000, coverUrl: 'https://picsum.photos/300/300?random=102', isHot: true, heat: 1256000, trend: 'up' },
-  { id: '3', name: '健身打卡', description: '每天健身，健康生活', videosCount: 18923, viewsCount: 8956000, coverUrl: 'https://picsum.photos/300/300?random=103', isHot: true, heat: 756800, trend: 'stable' },
-  { id: '4', name: '旅行日记', description: '记录旅途中的美好', videosCount: 34567, viewsCount: 18923000, coverUrl: 'https://picsum.photos/300/300?random=104', isHot: true, heat: 1568000, trend: 'up' },
-  { id: '5', name: '萌宠日常', description: '宠物的可爱瞬间', videosCount: 45678, viewsCount: 23456000, coverUrl: 'https://picsum.photos/300/300?random=105', isHot: false, heat: 2156000, trend: 'up' },
-  { id: '6', name: '舞蹈挑战', description: '最火舞蹈挑战合集', videosCount: 15678, viewsCount: 9876000, coverUrl: 'https://picsum.photos/300/300?random=106', isHot: true, heat: 895600, trend: 'down' },
-  { id: '7', name: '科技数码', description: '最新科技产品评测', videosCount: 8923, viewsCount: 4567000, coverUrl: 'https://picsum.photos/300/300?random=107', isHot: false, heat: 456800, trend: 'stable' },
-  { id: '8', name: '音乐分享', description: '好音乐一起听', videosCount: 28901, viewsCount: 11234000, coverUrl: 'https://picsum.photos/300/300?random=108', isHot: false, heat: 678900, trend: 'up' }
+  { id: '1', name: '夏日穿搭', description: '分享夏天的时尚穿搭灵感', videosCount: 12580, viewsCount: 5689000, participantsCount: 8956, coverUrl: 'https://picsum.photos/300/300?random=101', isHot: true, heat: 985600, trend: 'up' },
+  { id: '2', name: '美食探店', description: '发现城市里的美食宝藏', videosCount: 23456, viewsCount: 12345000, participantsCount: 15680, coverUrl: 'https://picsum.photos/300/300?random=102', isHot: true, heat: 1256000, trend: 'up' },
+  { id: '3', name: '健身打卡', description: '每天健身，健康生活', videosCount: 18923, viewsCount: 8956000, participantsCount: 12345, coverUrl: 'https://picsum.photos/300/300?random=103', isHot: true, heat: 756800, trend: 'stable' },
+  { id: '4', name: '旅行日记', description: '记录旅途中的美好', videosCount: 34567, viewsCount: 18923000, participantsCount: 23456, coverUrl: 'https://picsum.photos/300/300?random=104', isHot: true, heat: 1568000, trend: 'up' },
+  { id: '5', name: '萌宠日常', description: '宠物的可爱瞬间', videosCount: 45678, viewsCount: 23456000, participantsCount: 34567, coverUrl: 'https://picsum.photos/300/300?random=105', isHot: false, heat: 2156000, trend: 'up' },
+  { id: '6', name: '舞蹈挑战', description: '最火舞蹈挑战合集', videosCount: 15678, viewsCount: 9876000, participantsCount: 9876, coverUrl: 'https://picsum.photos/300/300?random=106', isHot: true, heat: 895600, trend: 'down' },
+  { id: '7', name: '科技数码', description: '最新科技产品评测', videosCount: 8923, viewsCount: 4567000, participantsCount: 5678, coverUrl: 'https://picsum.photos/300/300?random=107', isHot: false, heat: 456800, trend: 'stable' },
+  { id: '8', name: '音乐分享', description: '好音乐一起听', videosCount: 28901, viewsCount: 11234000, participantsCount: 18901, coverUrl: 'https://picsum.photos/300/300?random=108', isHot: false, heat: 678900, trend: 'up' }
 ]
 
 const VIDEO_TITLES = [
@@ -303,35 +303,35 @@ export const mockNotifications: Notification[] = [
 ]
 
 export const mockCategories: Category[] = [
-  { id: 'cat-1', name: '美食', icon: 'utensils', description: '美食探店、家常菜教程、美食测评', videosCount: 125680 },
-  { id: 'cat-2', name: '舞蹈', icon: 'music', description: '热门舞蹈、舞蹈教程、舞蹈挑战', videosCount: 89560 },
-  { id: 'cat-3', name: '旅行', icon: 'plane', description: '旅行vlog、风景分享、攻略推荐', videosCount: 156780 },
-  { id: 'cat-4', name: '科技', icon: 'cpu', description: '数码评测、科技资讯、效率工具', videosCount: 67890 },
-  { id: 'cat-5', name: '萌宠', icon: 'heart', description: '猫咪、狗狗、萌宠日常', videosCount: 234560 },
-  { id: 'cat-6', name: '健身', icon: 'dumbbell', description: '健身教程、健身打卡、营养知识', videosCount: 98760 },
-  { id: 'cat-7', name: '音乐', icon: 'headphones', description: '音乐分享、翻唱、原创音乐', videosCount: 112340 },
-  { id: 'cat-8', name: '时尚', icon: 'shirt', description: '穿搭分享、美妆教程、时尚资讯', videosCount: 145670 }
+  { id: 'cat-1', name: '美食', icon: 'utensils', emoji: '🍜', description: '美食探店、家常菜教程、美食测评', videosCount: 125680, videoCount: 125680 },
+  { id: 'cat-2', name: '舞蹈', icon: 'music', emoji: '💃', description: '热门舞蹈、舞蹈教程、舞蹈挑战', videosCount: 89560, videoCount: 89560 },
+  { id: 'cat-3', name: '旅行', icon: 'plane', emoji: '✈️', description: '旅行vlog、风景分享、攻略推荐', videosCount: 156780, videoCount: 156780 },
+  { id: 'cat-4', name: '科技', icon: 'cpu', emoji: '📱', description: '数码评测、科技资讯、效率工具', videosCount: 67890, videoCount: 67890 },
+  { id: 'cat-5', name: '萌宠', icon: 'heart', emoji: '🐱', description: '猫咪、狗狗、萌宠日常', videosCount: 234560, videoCount: 234560 },
+  { id: 'cat-6', name: '健身', icon: 'dumbbell', emoji: '💪', description: '健身教程、健身打卡、营养知识', videosCount: 98760, videoCount: 98760 },
+  { id: 'cat-7', name: '音乐', icon: 'headphones', emoji: '🎵', description: '音乐分享、翻唱、原创音乐', videosCount: 112340, videoCount: 112340 },
+  { id: 'cat-8', name: '时尚', icon: 'shirt', emoji: '👗', description: '穿搭分享、美妆教程、时尚资讯', videosCount: 145670, videoCount: 145670 }
 ]
 
 export const mockLiveRooms: LiveRoom[] = [
-  { id: 'live-1', title: '新人主播求关注~', userId: '3', user: mockUsers[2], coverUrl: 'https://picsum.photos/400/600?random=301', viewersCount: 1256, isLive: true, category: '舞蹈', startedAt: new Date(Date.now() - 1000 * 60 * 30).toISOString() },
-  { id: 'live-2', title: '深夜食堂，一起吃夜宵', userId: '2', user: mockUsers[1], coverUrl: 'https://picsum.photos/400/600?random=302', viewersCount: 8956, isLive: true, category: '美食', startedAt: new Date(Date.now() - 1000 * 60 * 60).toISOString() },
-  { id: 'live-3', title: '健身干货分享', userId: '6', user: mockUsers[5], coverUrl: 'https://picsum.photos/400/600?random=303', viewersCount: 3456, isLive: true, category: '健身', startedAt: new Date(Date.now() - 1000 * 60 * 45).toISOString() },
-  { id: 'live-4', title: '聊聊天，唱唱歌', userId: '8', user: mockUsers[7], coverUrl: 'https://picsum.photos/400/600?random=304', viewersCount: 5678, isLive: true, category: '音乐', startedAt: new Date(Date.now() - 1000 * 60 * 90).toISOString() },
-  { id: 'live-5', title: '带大家逛三亚', userId: '7', user: mockUsers[6], coverUrl: 'https://picsum.photos/400/600?random=305', viewersCount: 12345, isLive: true, category: '旅行', startedAt: new Date(Date.now() - 1000 * 60 * 120).toISOString() }
+  { id: 'live-1', title: '新人主播求关注~', userId: '3', user: mockUsers[2], anchor: mockUsers[2], coverUrl: 'https://picsum.photos/400/600?random=301', viewersCount: 1256, likesCount: 5680, isLive: true, category: '舞蹈', tags: ['新人', '舞蹈'], startedAt: new Date(Date.now() - 1000 * 60 * 30).toISOString() },
+  { id: 'live-2', title: '深夜食堂，一起吃夜宵', userId: '2', user: mockUsers[1], anchor: mockUsers[1], coverUrl: 'https://picsum.photos/400/600?random=302', viewersCount: 8956, likesCount: 23450, isLive: true, category: '美食', tags: ['美食', '夜宵'], startedAt: new Date(Date.now() - 1000 * 60 * 60).toISOString() },
+  { id: 'live-3', title: '健身干货分享', userId: '6', user: mockUsers[5], anchor: mockUsers[5], coverUrl: 'https://picsum.photos/400/600?random=303', viewersCount: 3456, likesCount: 12340, isLive: true, category: '健身', tags: ['健身', '干货'], startedAt: new Date(Date.now() - 1000 * 60 * 45).toISOString() },
+  { id: 'live-4', title: '聊聊天，唱唱歌', userId: '8', user: mockUsers[7], anchor: mockUsers[7], coverUrl: 'https://picsum.photos/400/600?random=304', viewersCount: 5678, likesCount: 18900, isLive: true, category: '音乐', tags: ['音乐', '聊天'], startedAt: new Date(Date.now() - 1000 * 60 * 90).toISOString() },
+  { id: 'live-5', title: '带大家逛三亚', userId: '7', user: mockUsers[6], anchor: mockUsers[6], coverUrl: 'https://picsum.photos/400/600?random=305', viewersCount: 12345, likesCount: 45670, isLive: true, category: '旅行', tags: ['旅行', '三亚'], startedAt: new Date(Date.now() - 1000 * 60 * 120).toISOString() }
 ]
 
 export const mockHotSearches: HotSearchItem[] = [
-  { id: 'hot-1', keyword: '夏日穿搭', heat: 2156000, trend: 'up', isHot: true, isNew: false },
-  { id: 'hot-2', keyword: '这家店真的绝了', heat: 1895000, trend: 'up', isHot: true, isNew: false },
-  { id: 'hot-3', keyword: '健身打卡挑战', heat: 1568000, trend: 'stable', isHot: true, isNew: false },
-  { id: 'hot-4', keyword: '旅行推荐', heat: 1256000, trend: 'up', isHot: false, isNew: true },
-  { id: 'hot-5', keyword: '萌宠日常', heat: 1123000, trend: 'down', isHot: false, isNew: false },
-  { id: 'hot-6', keyword: '舞蹈教程', heat: 987000, trend: 'up', isHot: false, isNew: false },
-  { id: 'hot-7', keyword: '数码评测', heat: 856000, trend: 'stable', isHot: false, isNew: true },
-  { id: 'hot-8', keyword: '音乐分享', heat: 745000, trend: 'up', isHot: false, isNew: false },
-  { id: 'hot-9', keyword: '家常菜教程', heat: 634000, trend: 'down', isHot: false, isNew: false },
-  { id: 'hot-10', keyword: '效率工具', heat: 523000, trend: 'up', isHot: false, isNew: false }
+  { id: 'hot-1', keyword: '夏日穿搭', heat: 2156000, viewsCount: 5689000, trend: 'up', isHot: true, isNew: false },
+  { id: 'hot-2', keyword: '这家店真的绝了', heat: 1895000, viewsCount: 4567000, trend: 'up', isHot: true, isNew: false },
+  { id: 'hot-3', keyword: '健身打卡挑战', heat: 1568000, viewsCount: 3456000, trend: 'stable', isHot: true, isNew: false },
+  { id: 'hot-4', keyword: '旅行推荐', heat: 1256000, viewsCount: 2345000, trend: 'up', isHot: false, isNew: true },
+  { id: 'hot-5', keyword: '萌宠日常', heat: 1123000, viewsCount: 2156000, trend: 'down', isHot: false, isNew: false },
+  { id: 'hot-6', keyword: '舞蹈教程', heat: 987000, viewsCount: 1895000, trend: 'up', isHot: false, isNew: false },
+  { id: 'hot-7', keyword: '数码评测', heat: 856000, viewsCount: 1568000, trend: 'stable', isHot: false, isNew: true },
+  { id: 'hot-8', keyword: '音乐分享', heat: 745000, viewsCount: 1256000, trend: 'up', isHot: false, isNew: false },
+  { id: 'hot-9', keyword: '家常菜教程', heat: 634000, viewsCount: 1123000, trend: 'down', isHot: false, isNew: false },
+  { id: 'hot-10', keyword: '效率工具', heat: 523000, viewsCount: 987000, trend: 'up', isHot: false, isNew: false }
 ]
 
 export const recommendedAccounts = mockUsers.filter(u => u.id !== '1').slice(0, 6)

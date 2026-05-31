@@ -40,7 +40,7 @@ const filteredMessages = computed(() => {
     const query = searchQuery.value.toLowerCase()
     messages = messages.filter(m => 
       m.content.toLowerCase().includes(query) || 
-      m.sender?.nickname.toLowerCase().includes(query)
+      m.fromUser?.nickname.toLowerCase().includes(query)
     )
   }
   
@@ -135,8 +135,8 @@ const markAllAsRead = () => {
         >
           <div class="relative">
             <img 
-              :src="message.sender?.avatar || '/default-avatar.png'" 
-              :alt="message.sender?.nickname || '系统消息'"
+              :src="message.fromUser?.avatar || '/default-avatar.png'" 
+              :alt="message.fromUser?.nickname || '系统消息'"
               class="w-12 h-12 rounded-full object-cover"
             />
             <div 
@@ -172,7 +172,7 @@ const markAllAsRead = () => {
           <div class="flex-1 min-w-0">
             <div class="flex items-center justify-between mb-1">
               <span class="font-medium">
-                {{ message.sender?.nickname || '系统消息' }}
+                {{ message.fromUser?.nickname || '系统消息' }}
               </span>
               <span class="text-xs text-white/50">{{ formatTime(message.createdAt) }}</span>
             </div>

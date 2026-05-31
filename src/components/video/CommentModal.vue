@@ -89,10 +89,6 @@ const handleClose = () => {
   emit('close')
 }
 
-const isCommentLiked = (comment: Comment) => {
-  return videoStore.isCommentLiked(props.video.id, comment.id)
-}
-
 onMounted(() => {
   if (!comments.value.length) {
     videoStore.getVideoComments(props.video.id)
@@ -106,7 +102,7 @@ onMounted(() => {
       <div class="modal-slide-in max-w-lg w-full max-h-[80vh] bg-tiktik-gray rounded-t-2xl overflow-hidden">
         <div class="flex items-center justify-between p-4 border-b border-white/10">
           <h3 class="text-lg font-bold">
-            评论 ({{ formatNumber(video.commentsCount + comments.value.length) }})
+            评论 ({{ formatNumber(video.commentsCount + comments.length) }})
           </h3>
           <button 
             class="p-2 rounded-full hover:bg-white/10 transition-colors"
@@ -117,13 +113,13 @@ onMounted(() => {
         </div>
 
         <div class="overflow-y-auto max-h-[50vh] hide-scrollbar">
-          <div v-if="!comments.value.length" class="py-16 text-center">
+          <div v-if="!comments.length" class="py-16 text-center">
             <p class="text-white/50">暂无评论，快来抢沙发吧~</p>
           </div>
 
           <div v-else class="divide-y divide-white/5">
             <div 
-              v-for="comment in comments.value"
+              v-for="comment in comments"
               :key="comment.id"
               class="p-4 hover:bg-white/5 transition-colors"
             >
@@ -162,7 +158,7 @@ onMounted(() => {
                   </div>
                   
                   <p v-if="comment.parentId" class="text-xs text-white/50 mb-1">
-                    回复 @{{ comments.value.find(c => c.id === comment.parentId)?.user.nickname }}
+                    回复 @{{ comments.find((c: Comment) => c.id === comment.parentId)?.user.nickname }}
                   </p>
                   
                   <p class="text-sm text-white/90 mb-2 break-words">{{ comment.content }}</p>
@@ -179,14 +175,14 @@ onMounted(() => {
                       </button>
                       <button 
                         class="flex items-center gap-1"
-                        :class="{ 'text-tiktik-primary': isCommentLiked(comment) }"
+                        :class="{ 'text-tiktik-primary': comment.isLiked }"
                         @click="handleLike(comment.id)"
                       >
                         <Heart 
                           class="w-3.5 h-3.5"
-                          :class="{ 'fill-tiktik-primary': isCommentLiked(comment) }"
+                          :class="{ 'fill-tiktik-primary': comment.isLiked }"
                         />
-                        {{ formatNumber(comment.likesCount + (isCommentLiked(comment) ? 1 : 0)) }}
+                        {{ formatNumber(comment.likesCount) }}
                       </button>
                     </div>
                   </div>
@@ -211,16 +207,26 @@ onMounted(() => {
           
           <div class="flex gap-3">
             <input
-              v-model="replyTo ? replyInput : commentInput"
+              v-if="replyTo"
+              v-model="replyInput"
               type="text"
-              :placeholder="replyTo ? '写下你的回复...' : '说点什么...'"
+              placeholder="写下你的回复..."
               class="flex-1 input-field py-2"
               maxlength="200"
-              @keyup.enter="replyTo ? submitReply() : submitComment()"
+              @keyup.enter="submitReply()"
+            />
+            <input
+              v-else
+              v-model="commentInput"
+              type="text"
+              placeholder="说点什么..."
+              class="flex-1 input-field py-2"
+              maxlength="200"
+              @keyup.enter="submitComment()"
             />
             <button 
               class="px-6 py-2 bg-tiktik-primary rounded-full font-medium hover:bg-opacity-90 transition-colors flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-              :disabled="!(replyTo ? replyInput : commentInput).trim()"
+              :disabled="replyTo ? !replyInput.trim() : !commentInput.trim()"
               @click="replyTo ? submitReply() : submitComment()"
             >
               <Send class="w-4 h-4" />

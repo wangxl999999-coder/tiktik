@@ -29,7 +29,7 @@ const userStore = useUserStore()
 
 const isAnimating = ref(false)
 
-const isLiked = computed(() => videoStore.isLiked(props.video.id))
+const isLiked = computed(() => props.video.isLiked)
 const isFavorited = computed(() => userStore.isFavorited(props.video.id))
 
 const formatNumber = (num: number): string => {
